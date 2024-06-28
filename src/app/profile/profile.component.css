@@ -1,0 +1,25 @@
+.profile{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    /* width: 90vw; */
+    margin: 0px auto;
+    background-color: var(--dark-blue);
+    border: 1px solid;
+    color: var(--white);
+}
+.profile .top-image {
+    height: 3rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.profile .top-image image{
+    width: 100%;
+}
+
+.profile .bottom{
+    display: inline-flex;
+    flex-direction: column;
+    padding: .5rem;
+}

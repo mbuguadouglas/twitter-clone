@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+:root{
+    --blue-1: #023e8a;
+    --blue-2: #0077b6;
+    --blue-3: #0096c7;
+    --blue-4: #00b4d8;
+    --dark-blue: #12171e;   
+    --gray:hsl(219, 12%, 42%);
+	--white: #eee;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

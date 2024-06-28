@@ -1,0 +1,36 @@
+
+.navbar{
+    /* border: 1px solid; */
+    display: flex;
+    justify-content: space-between;
+    padding: .4rem;
+    /* height: 15vh; */
+    background-color: var(--dark-blue);
+}
+
+.navbar .logo{
+    /* border: 1px solid; */
+    display: inline-flex;
+    cursor: pointer;
+    padding: .4rem;
+    color: var(--white);
+} 
+
+.navbar .search-bar{
+    /* border: 1px solid; */
+    padding: .9rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar .search-form select{
+    display: flex;
+    padding: .1rem .4rem;
+    align-items: center;
+    justify-content: baseline;
+}
+
+.navbar .search-bar span{
+    color: var(--white);
+
+}

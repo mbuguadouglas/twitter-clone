@@ -16,9 +16,4 @@ export class PostsService {
     return this,this.http.get<Array<allPosts>>(this.baseUrl+'posts')
   }
 
-  // methods 1 comment from API
-  getPost(x:number): Observable<allPosts>{
-    return this.http.get<allPosts>(this.baseUrl+`posts/${x}`)
-  }
-
 }

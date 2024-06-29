@@ -16,10 +16,4 @@ export class CommentsService {
     return this.http.get<Array<allComments>>(this.baseUrl+'comments')
   }
 
-  // methods 1 comment from API
-  getComment(x:number): Observable<allComments>{
-    return this.http.get<allComments>(this.baseUrl+`comments/${x}`)
-  }
-
-
 }

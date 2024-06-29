@@ -13,4 +13,8 @@ import { HomepageComponent } from "./homepage/homepage.component";
 })
 export class AppComponent {
   title = '4.twitter-clone';
+
+  // declare the variables for component communication
+  userId:string = ''
+  commentIdParent:string = '5' 
 }

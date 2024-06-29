@@ -9,7 +9,7 @@
                 <form class="search-form">
                     <span>Pick a User: </span>
                     <select  id="dropdown">
-                        <!-- <option [defaultSelected]=""> Select an option </option> -->
+                        <option [defaultSelected]=""> Select an option </option>
                         <option *ngFor="let user of users" value="{{user.id}}"> {{user.name}} </option>
                       
                     </select>

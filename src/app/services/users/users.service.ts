@@ -13,9 +13,9 @@ export class UsersService {
   private readonly baseUrl:string = 'https://jsonplaceholder.typicode.com/' 
 
   // methods to fetch comments from API
-  getUsers(): Observable<allUsers>{
+  getUsers(): Observable<Array<allUsers>>{
     // first get all users. latr get one specifc with id
-    return this.http.get<allUsers>(this.baseUrl+'users')
+    return this.http.get<Array<allUsers>>(this.baseUrl+'users')
   }
 
   // methods 1 comment from API

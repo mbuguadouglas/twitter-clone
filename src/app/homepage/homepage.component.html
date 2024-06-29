@@ -71,14 +71,14 @@
         </div>
         
         <!-- tweets-panel -->
-        <div class="tweets-panel">
+        <div *ngIf="posts" class="tweets-panel">
 
             <h2> Tweets</h2>
 
-            <div class="tweet-card">
-                <div class="top">
+            <div *ngFor="let post of posts" class="tweet-card">
+                <div class="top" id="{{post.userId}}">
                     <img src="https://cdn.pixabay.com/photo/2018/04/04/10/11/woman-3289372_640.jpg" alt="avatar">
-                    <label> {{name}}</label>
+                    <label> {{post.title}}</label>
                     <label> &#64;{{username}} </label>
                     <label> Current Date </label>
                     <i class='bx bx-dots-horizontal-rounded'></i>
@@ -86,7 +86,7 @@
 
                 <div class="middle">
                     <p>
-                        {{postBody}}
+                        {{post.body}}
                     </p>
                 </div>
 
@@ -120,15 +120,15 @@
 
                 
         <!-- comments div -->
-        <div class="comments-panel">
+        <div *ngIf="comments" class="comments-panel">
 
             <h2> Comments </h2>
 
             <!-- comments 1 -->
-            <div class="comment-card">
-                <div class="top">
+            <div *ngFor="let comment of comments" class="comment-card">
+                <div class="top" id="{{comment.id}}">
                     <img src="https://cdn.pixabay.com/photo/2022/09/16/13/07/generated-7458584_640.jpg" alt="avatar">
-                    <label> {{commentName}} </label>
+                    <label> {{comment.name}} </label>
                     <label> &#64;Username </label>
                     <label> Current Date </label>
                     <i class='bx bx-dots-horizontal-rounded'></i>
@@ -136,7 +136,7 @@
 
                 <div class="middle">
                     <p>
-                        {{commentBody}}
+                        {{comment.body}}
                     </p>
                 </div>
                 

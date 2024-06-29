@@ -12,8 +12,8 @@ export class PostsService {
   private readonly baseUrl:string = 'https://jsonplaceholder.typicode.com/' 
 
   // methods to fetch comments from API
-  getPosts(): Observable<allPosts>{
-    return this,this.http.get<allPosts>(this.baseUrl+'posts')
+  getPosts(): Observable<Array<allPosts>>{
+    return this,this.http.get<Array<allPosts>>(this.baseUrl+'posts')
   }
 
   // methods 1 comment from API

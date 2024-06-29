@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { PostsService } from '../services/posts/posts.service';
 import { CommentsService } from '../services/comments/comments.service';
 import { UsersService } from '../services/users/users.service';
+import { allPosts } from '../models/posts';
+import { allComments } from '../models/comments';
 
 @Component({
   selector: 'app-homepage',
@@ -14,8 +16,8 @@ import { UsersService } from '../services/users/users.service';
 export class HomepageComponent implements OnInit{
 
     constructor( 
-      private posts:PostsService,
-      private comments:CommentsService,
+      private ps:PostsService,
+      private cs:CommentsService,
       private users:UsersService
     ){}
 
@@ -29,64 +31,24 @@ export class HomepageComponent implements OnInit{
     city = ''
     catchPhrase = ''
 
-    // use 2 way binding to get this later
-    postOf= ''
-    postId= ''
-    postTitle= ''
-    postBody  = '' 
-
-    // comments
-    commentOf = ''
-    commentId = ''
-    commentName = ''
-    commentEmail = ''
-    commentBody = ''
+    posts:Array<allPosts> = []
+    comments:Array<allComments> = []
 
     ngOnInit(): void {
       // get all posts
-    //   this.posts.getPosts().subscribe({
-    //     next: (v) => console.log(v),
-    //     error: (e) => console.error(e),
-    //     complete: () => console.info('complete') 
-    // })
+      this.ps.getPosts().subscribe({
+        next: (v) => {console.log(v),this.posts = v},
+        error: (e) => console.error(e),
+        complete: () => console.info('complete') 
+    })
 
       // get all comments
-    //   this.comments.getComments().subscribe({
-    //     next: (v) => console.log(v),
-    //     error: (e) => console.error(e),
-    //     complete: () => console.info('complete')
-    //   })
+      this.cs.getComments().subscribe({
+        next: (v) => {console.log(v),this.comments = v},
+        error: (e) => console.error(e),
+        complete: () => console.info('complete')
+      })
 
-    // get one post
-    //   this.posts.getPost(this.id).subscribe({
-    //     next: (v) => console.log(v),
-    //     error: (e) => console.error(e),
-    //     complete: () => console.info('complete') 
-    // })
-
-    // // get one comment
-    // this.comments.getComment(this.id).subscribe({
-    //   next: (v) => console.log(v),
-    //   error: (e) => console.error(e),
-    //   complete: () => console.info('complete')
-    // })
-
-    this.posts.getPost(this.id).subscribe((response: any) => {
-      const { userId, id, title, body } = response
-      this.postOf = userId
-      this.postId = id
-      this.postTitle = title
-      this.postBody = body
-    })
-
-    this.comments.getComment(this.id).subscribe((response: any) => {
-      const { postId, id,name,email, body } = response
-      this.commentOf = postId
-      this.commentId = id
-      this.commentName = name
-      this.commentEmail = email
-      this.commentBody = body
-    })
 
       // get one user
     this.users.getUser(this.id).subscribe((response: any) => {

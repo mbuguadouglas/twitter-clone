@@ -5,17 +5,13 @@
                 <i class='bx bxl-twitter bx-lg' ></i> <h1> Twitter </h1>
             </div>
 
-            <div class="search-bar">
+            <div *ngIf="users" class="search-bar">
                 <form class="search-form">
                     <span>Pick a User: </span>
-                    <select id="dropdown">
-                        <!-- <option value=""> Select an option </option>
-                        <option value="user 1"> User 1 </option>
-                        <option value="user 2"> User 2 </option>
-                        <option value="user 3"> User 3 </option>
-                        <option value="user 4"> User 4 </option>
-                        <option value="user 5"> User 5 </option>
-                        <option value="user 6"> User 6 </option> -->
+                    <select  id="dropdown">
+                        <!-- <option [defaultSelected]=""> Select an option </option> -->
+                        <option *ngFor="let user of users" value="{{user.id}}"> {{user.name}} </option>
+                      
                     </select>
                </form>
             </div>

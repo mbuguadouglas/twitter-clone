@@ -74,14 +74,13 @@
          <!-- {{this.userIdGotten}} -->
         <div *ngIf="posts" class="tweets-panel">
 
-            <h2> Tweets</h2> <label> for user </label>
+            <h2> Tweets</h2> <label> for user {{userIdGotten}}</label>
 
-            <div *ngFor="let post of posts" class="tweet-card">
-                <div class="top" id="{{post.id}}">
+            <div *ngFor="let post of posts" [id]='post.id' (click)="clickedPost(post.id)" class="tweet-card">
+                <div class="top" >
                     <img src="https://cdn.pixabay.com/photo/2018/04/04/10/11/woman-3289372_640.jpg" alt="avatar">
                     <label> {{post.userId === +userIdGotten}}</label>
                     <label> &#64; {{post.userId}} </label>
-                    <label> Current Date </label>
                     <i class='bx bx-dots-horizontal-rounded'></i>
                 </div>
 
@@ -121,17 +120,17 @@
 
                 
         <!-- comments div -->
-        <div *ngIf="comments"  class="comments-panel">
+        <div *ngIf="specificUserComments"  class="comments-panel">
 
-            <h2> Comments </h2> <label> for post {{userIdGotten}}</label>
+            <h2> Comments </h2> 
 
             <!-- comments 1 -->
-            <div *ngFor="let comment of comments" id="{{comment.id}}" class="comment-card">
+            <div *ngFor="let comment of specificUserComments"  class="comment-card">
+                <label> for post {{comment.postId}} </label>
                 <div class="top">
                     <img src="https://cdn.pixabay.com/photo/2022/09/16/13/07/generated-7458584_640.jpg" alt="avatar">
                     <label> {{comment.name}} </label>
-                    <label> &#64;Username </label>
-                    <label> Current Date </label>
+                    <label> {{comment.email}} </label>
                     <i class='bx bx-dots-horizontal-rounded'></i>
                 </div>
 

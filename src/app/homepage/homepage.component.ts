@@ -25,9 +25,11 @@ export class HomepageComponent implements OnInit, OnChanges{
     @Input() commentIdChild:string = ''
     @Input() id:string = ''
     commentIdGotten: string = ''
+    postIdPassed:string = ''
 
     posts:Array<allPosts> = []
     comments:Array<allComments> = []
+    specificUserComments:Array<allComments> = []
 
     ngOnChanges(changes: SimpleChanges): void {
       if( changes['userIdGotten']){
@@ -55,13 +57,15 @@ export class HomepageComponent implements OnInit, OnChanges{
 
     getComments():void{
       this.cs.getComments().subscribe({
-        next: (v) => {
-          console.log(`displaying comments for: ${this.userIdGotten}`)
-          // this.comments = v.filter((x) => x.postId === this.posts.filter((x)=>x.id)
-        },
+        next: (v) => this.comments = v,
         error: (e) => console.error(e),
         complete: () => console.info('complete')
       })
+      }
+
+      clickedPost(id:number):void{
+        this.specificUserComments = this.comments.filter((x)=> x.postId ===id)
+        console.log(`these are comments for ${id}`)
       }
 
 

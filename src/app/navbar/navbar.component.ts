@@ -37,7 +37,7 @@ export class NavbarComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    console.log(this.selectedId)
+    // console.log(this.selectedId)
     // get all posts
     this.us.getUsers().subscribe({
       next:(response)=>  {this.users = response} 

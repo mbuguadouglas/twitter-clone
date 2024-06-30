@@ -47,7 +47,7 @@ export class HomepageComponent implements OnInit, OnChanges{
     getPosts(): void {
       this.ps.getPosts().subscribe({
         next: (v) => {
-          console.log(`displaying userId: ${this.userIdGotten}`)
+          // console.log(`displaying userId: ${this.userIdGotten}`)
           this.posts = v.filter((x) => x.userId === +this.userIdGotten)
         },
         error: (e) => console.error(e),
@@ -65,7 +65,7 @@ export class HomepageComponent implements OnInit, OnChanges{
 
       clickedPost(id:number):void{
         this.specificUserComments = this.comments.filter((x)=> x.postId ===id)
-        console.log(`these are comments for ${id}`)
+        // console.log(`these are comments for ${id}`)
       }
 
 

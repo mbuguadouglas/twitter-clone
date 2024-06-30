@@ -35,7 +35,7 @@ export class ProfileComponent implements OnChanges, OnInit{
   getUser(): void {
     this.us.getUsers().subscribe({
       next: (v) => {
-        console.log(`displaying userId: ${this.id}`)
+        // console.log(`displaying userId: ${this.id}`)
         this.users = v.filter((x) => x.id === +this.id)
       },
       error: (e) => console.error(e),

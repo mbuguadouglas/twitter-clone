@@ -79,7 +79,7 @@
             <div *ngFor="let post of posts" [id]='post.id' (click)="clickedPost(post.id)" class="tweet-card">
                 <div class="top" >
                     <img src="https://cdn.pixabay.com/photo/2018/04/04/10/11/woman-3289372_640.jpg" alt="avatar">
-                    <label> {{post.userId === +userIdGotten}}</label>
+                    <label > {{post.title}}</label>
                     <label> &#64; {{post.userId}} </label>
                     <i class='bx bx-dots-horizontal-rounded'></i>
                 </div>

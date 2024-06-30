@@ -17,4 +17,9 @@ export class AppComponent {
   // declare the variables for component communication
   userId:string = ''
   commentIdParent:string = '5' 
+
+  //get userId from navbar. It worked
+  userIdToUse(eventData:string){
+    this.userId = eventData
+  }
 }

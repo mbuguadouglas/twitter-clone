@@ -1,16 +1,17 @@
 <div class="container">
 
   <!-- add the navabar -->
-  <app-navbar></app-navbar>
+  <app-navbar (selectedId)="userIdToUse($event)"></app-navbar>
+  <!-- <p> {{userId}}</p> -->
 
   <!-- where the routes keep changing.NOT NEEDED HERE -->
   <!-- <router-outlet /> -->
 
   <!-- add the profile div -->
-  <app-profile></app-profile>
+  <app-profile [id]="userId"></app-profile>
 
   <!-- add the homepage -->
-   <app-homepage [commentIdChild]="commentIdParent"></app-homepage>
+   <app-homepage [commentIdChild]="commentIdParent" [userIdGotten]="userId"></app-homepage>
 
 </div>
 

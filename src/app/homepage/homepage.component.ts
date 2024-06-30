@@ -17,8 +17,7 @@ export class HomepageComponent implements OnInit, OnChanges{
 
     constructor( 
       private ps:PostsService,
-      private cs:CommentsService,
-      private users:UsersService
+      private cs:CommentsService
     ){}
 
     // alllows properties to be set by parent
@@ -35,7 +34,7 @@ export class HomepageComponent implements OnInit, OnChanges{
         this.getPosts()
       }
     }
-
+    
     ngOnInit(): void {
       this.getPosts()
       this.getComments()
@@ -64,6 +63,7 @@ export class HomepageComponent implements OnInit, OnChanges{
         complete: () => console.info('complete')
       })
       }
+
 
 }
 
